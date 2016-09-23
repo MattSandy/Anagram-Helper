@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("p.anagram.live").sortable();
     reset_boxes();
     $("#anagram").keyup(function () {
         var anagram = $("#anagram").val();
@@ -16,6 +17,9 @@ $(document).ready(function () {
     });
     $("#save").click(function () {
         $("div.anagrams").append('<p class="anagram">' + $("p.anagram.stage").html() + '</p>')
+        $("p.anagram.stage span").each(function(){
+           $(this).click(); 
+        });
     });
 });
 function reset_boxes() {
