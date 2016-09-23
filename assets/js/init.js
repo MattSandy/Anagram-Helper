@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $("p.anagram.live").sortable();
+    $("p.anagram.stage").sortable();
     reset_boxes();
     $("#anagram").keyup(function () {
         var anagram = $("#anagram").val();
@@ -16,7 +17,7 @@ $(document).ready(function () {
         reset_boxes();
     });
     $("#save").click(function () {
-        $("div.anagrams").append('<p class="anagram">' + $("p.anagram.stage").html() + '</p>')
+        $("div.anagrams").prepend('<p class="anagram">' + $("p.anagram.stage").html() + '</p>')
         $("p.anagram.stage span").each(function(){
            $(this).click(); 
         });
